@@ -1,0 +1,339 @@
+@charset "UTF-8"
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:700,300|Roboto:300,700&subset=latin,latin-ext,cyrillic")
+@page {
+  size: A4;
+  margin: 0;
+}
+
+minBreakPoint = 560px
+midBreakPoint = 768px
+maxBreakPoint = 1020px
+
+bgSidebar = #324B78
+bgMain = #fff
+colorSidebar = #fff
+colorMain = #333
+colorMainHeader = #555
+colorMainSubheader = #999
+
+
+body.body  
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");
+  position: relative
+  @media print
+    height: 277.775mm
+    -webkit-print-color-adjust: exact
+    background transparent
+    
+  
+.cv 
+  font-family "Roboto", sans-serif
+  font-weight 300
+  font-size 15px
+  
+  @media print 
+    font-size 12px
+    
+  @media (max-width midBreakPoint)
+    font-size 12px
+  
+  .cv-page
+    position relative
+    overflow hidden
+    margin 30px auto 
+    max-width maxBreakPoint
+    min-height: 1300px
+    background bgMain
+    border-radius 2px
+    -webkit-box-shadow 0 2px 15px 3px rgba(0, 0, 0, 0.5)
+    box-shadow 0 2px 15px 3px rgba(0, 0, 0, 0.5)
+    
+    @media (max-width maxBreakPoint)
+      margin: 0 auto 30px
+    
+    @media (max-width midBreakPoint)
+      min-height 1160px
+      
+    @media (max-width minBreakPoint)
+      min-height auto
+      margin: 0 auto 0
+      box-shadow none
+      border-radius 0
+        
+    @media print
+      margin: 0 auto
+      box-shadow none
+      border-radius 0
+      min-height: auto
+      height: 277.775mm
+      page-break-after: always;
+    
+    &::before
+      content ''
+      display: block
+      position absolute
+      top 0
+      left 0
+      bottom 0
+      width: 33.3333%
+      background-color bgSidebar
+      background-image url('../i/pattern.png')
+      background-size 100% auto
+      
+      @media (max-width minBreakPoint)
+        display none
+
+  h1, h2, h3, h4, h5, h6
+    margin-top 0px
+    margin-bottom 0.4em
+  h1 
+    margin 0px
+    margin-bottom 0.25em
+    color colorSidebar
+    font-family "Roboto Condensed", sans-serif
+    font-size 225%
+    line-height 1em
+    font-weight 200
+    text-align center
+    text-transform uppercase
+  h2 
+    font-size 150%
+    font-weight 300
+    font-style italic
+    text-align center
+  h3 
+    font-family "Roboto Condensed", sans-serif
+    font-size 150%
+    font-weight 700
+  h4
+    font-size 125%
+    font-weight 500
+  h5
+    color colorMainSubheader
+    font-size 125%
+    font-weight 500
+    font-style italic
+  h6 
+    color colorMainSubheader
+    font-size 125%
+    font-weight 300
+
+
+  section 
+    margin-bottom 1.5em
+
+    header 
+      width 100%
+      margin-bottom 2.25em
+      border-bottom 1px solid #dedede
+      height 1em
+      text-align left
+
+      h3 
+        padding 0px 0.5em 0px 0px
+        background bgMain
+        text-align center
+        vertical-align middle
+        display inline-block
+        margin 0em 2px 0px 0px
+
+        &:after 
+          content " "
+          
+    article 
+      margin-bottom 1em
+      page-break-inside: avoid
+      
+      h5
+        float right
+        text-align: right
+
+
+  .sidebar 
+    padding 3em 3%
+    color colorSidebar
+    z-index 1
+    
+    @media (max-width minBreakPoint) 
+      float none
+      width 100% !important
+      background bgSidebar
+
+    header
+      height auto
+      padding:0;
+      margin-bottom: 1.25em
+      overflow hidden
+      border:none
+      white-space nowrap
+      h3 
+        background transparent
+        padding:0;
+      
+      &:after
+        content ''
+        display inline-block
+        height 1px
+        width 100%
+        background #dedede
+
+    article a 
+      color colorSidebar
+
+    .contact_info
+      margin-bottom 2em
+      
+      .user-thumb 
+        max-width 50%
+        margin 0px auto
+        border 1px solid colorSidebar
+        padding 4px
+        border-radius 100%
+        margin-top 1px
+
+        &-img 
+          padding-bottom 100%
+          border-radius 100%
+          background-size cover
+          background-position center
+          
+      .user-title 
+        padding 1em 0px
+        @media print
+          margin: 0 -1em
+      
+    .user-contact p
+      margin-bottom 0
+      line-height 20px
+      white-space: nowrap
+      
+      @media (max-width minBreakPoint)
+        font-size 15px
+      
+      @media print
+        line-height 16px
+      
+      a:hover
+        text-decoration none
+        
+        .link-text
+          text-decoration underline
+      
+      .link-icon, .link-text 
+        display inline-block
+        vertical-align middle
+      
+      .link-icon svg
+        height 20px
+        width 20px
+        @media print
+          height 16px
+          width 16px
+
+    .reference .user-title .title
+      float right
+      margin-bottom: 0
+      font-style italic
+      text-align right
+      line-height 100%
+      
+    hr
+      border: 1px solid #dedede
+      border-top: none
+      margin: 1em 0
+        
+    ul 
+      padding-left 1.5em
+
+  .main 
+    padding 3em 3%
+    
+    @media (max-width minBreakPoint) 
+      width 100% !important
+
+    .article-headings.col-xs-3 
+      width 100px
+      padding-right 0px
+      @media (max-width minBreakPoint) 
+        width 100% !important
+      @media print
+        width 80px
+      
+      .from, .to, .duration
+        white-space nowrap
+      
+      .duration small
+          font-size 60%
+        
+    .article-body.col-xs-9 
+      width calc(100% - 100px)
+      
+      @media (max-width minBreakPoint) 
+        width 100% !important
+        
+      @media print
+        width calc(100% - 80px)
+        
+        p:last-child 
+          margin-bottom 5px
+          
+    h3 
+      color colorMainHeader
+      background-color bgMain
+
+    .summary 
+      header 
+        text-align center
+        margin-bottom 1.5em
+
+      article 
+        margin-top 0px
+        text-align center
+        padding 0.5em 0.5em
+        font-size 115%
+        font-weight 200
+
+  .skill .skill-value 
+    list-style none
+    width 100%
+    padding-left 2%
+    white-space nowrap
+
+    li 
+      height 1em
+      width 6%
+      margin-right 2.25%
+      background-color #999999
+      -webkit-transform skewX(-30deg)
+      transform skewX(-30deg)
+      display inline-block
+      background rgba(255, 255, 255, 0.3)
+
+      &.filled 
+        background-color colorSidebar
+        
+
+#pdf
+  position fixed
+  bottom: 10px
+  right:10px
+  width:110px
+  text-align center
+  background rgba(255, 255, 255, 0.5)
+  transition: transform 0.5s, background-color 0.4s
+  
+  .link-icon
+    max-width: 64px
+    max-height: 64px
+    
+  .link-text
+    color #000
+    text-shadow 0 1px 3px #fff
+    
+  &:hover
+    transform translateY(-10px)
+    background rgba(255, 255, 255, 0.7)
+    text-decoration none
+    
+  @media print
+    display none

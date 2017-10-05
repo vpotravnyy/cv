@@ -65,7 +65,7 @@ body.body {
     box-shadow: none;
     border-radius: 0;
     min-height: auto;
-    height: 277.775mm;
+    height: 100vh;
     page-break-after: always;
   }
 }
@@ -221,7 +221,7 @@ body.body {
   }
 }
 .cv .sidebar .user-contact p {
-  margin-bottom: 0;
+  margin-bottom: 3px;
   line-height: 20px;
   white-space: nowrap;
 }
@@ -259,6 +259,7 @@ body.body {
 .cv .sidebar .reference .user-title .title {
   float: right;
   margin-bottom: 0;
+  margin-top: 4px;
   font-style: italic;
   text-align: right;
   line-height: 100%;
@@ -346,7 +347,7 @@ body.body {
   -webkit-transform: skewX(-30deg);
   transform: skewX(-30deg);
   display: inline-block;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.25);
 }
 .cv .skill .skill-value li.filled {
   background-color: rgba(255,255,255,0.9);
